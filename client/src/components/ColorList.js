@@ -37,10 +37,10 @@ const ColorList = ({ colors, setColorList, getBubbles, updateColorList, ...props
       .put(`/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
         console.log(res);
-        // props.updateColorList(res.data);
+        // props.setColorList(res.data);
         // props.history.push("/BubblePage")
         getBubbles();
-        resetField();
+        // resetField();
         
     })
     .catch(err =>
@@ -58,6 +58,7 @@ const ColorList = ({ colors, setColorList, getBubbles, updateColorList, ...props
         // props.history.push("/BubblePage")
         getBubbles();
         resetField();
+        setEditing(false);
       })
       .catch(err =>
         console.log(err)    
@@ -72,7 +73,7 @@ const ColorList = ({ colors, setColorList, getBubbles, updateColorList, ...props
           // props.updateColorList(res.data);
           // props.history.push("/BubblePage")
           getBubbles();
-          resetField();
+          setAddColor(initialColor);
           
         })
         .catch(err =>
