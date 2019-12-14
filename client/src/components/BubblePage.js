@@ -13,6 +13,9 @@ const BubblePage = () => {
     getBubbles()
   },[])
 
+  const updateColorList = color => {
+    setColorList([...colorList, color])
+  }
 
   const getBubbles = () => {
     axiosWithAuth()
@@ -26,8 +29,9 @@ const BubblePage = () => {
 
   return (
     <>
-      <ColorList colors={colorList} setColorList={setColorList} getBubbles={getBubbles}/>
+      <ColorList colors={colorList} setColorList={setColorList} getBubbles={getBubbles} updateColorList={updateColorList}/>
       <Bubbles colors={colorList} />
+      
     </>
   );
 };
