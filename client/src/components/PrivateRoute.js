@@ -1,5 +1,6 @@
 import React from "react";
 import {Route, Redirect} from "react-router-dom";
+import BubblePage from "./BubblePage";
 
 const PrivateRoute =({component: Component, ...theRest}) => {
     return (

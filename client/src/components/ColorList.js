@@ -37,9 +37,11 @@ const ColorList = ({ colors, setColorList, getBubbles, updateColorList, ...props
       .put(`/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
         console.log(res);
-        // updateColorList(res.data)
+        // props.updateColorList(res.data);
+        // props.history.push("/BubblePage")
         getBubbles();
-        resetField()
+        resetField();
+        
     })
     .catch(err =>
         console.log(err)    
@@ -52,8 +54,10 @@ const ColorList = ({ colors, setColorList, getBubbles, updateColorList, ...props
     axiosWithAuth()
       .delete(`/colors/${colorToEdit.id}`)
       .then(res => {
-        // updateColorList(res.data)
+        // props.updateColorList(res.data);
+        // props.history.push("/BubblePage")
         getBubbles();
+        resetField();
       })
       .catch(err =>
         console.log(err)    
@@ -65,10 +69,11 @@ const ColorList = ({ colors, setColorList, getBubbles, updateColorList, ...props
     axiosWithAuth()
         .post(`http://localhost:5000/api/colors`, newColor)
         .then(res => {
-            // updateColorList(res.data);
-            // props.history.push(`/`);
-            getBubbles();
-            resetField();
+          // props.updateColorList(res.data);
+          // props.history.push("/BubblePage")
+          getBubbles();
+          resetField();
+          
         })
         .catch(err =>
             console.log(err)    
