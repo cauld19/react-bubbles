@@ -27,22 +27,27 @@ const Login = props => {
 
 
   return (
+    <div className="login-container">
+      <h2 className="header-login">
+        LOGIN PAGE
+      </h2>
       <div className="login-form-main">
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    value={credentials.username}
-                    onChange={e => setCredentials({username: e.target.value})}
-                />
-                <input
-                    type="text"
-                    name="password"
-                    value={credentials.password}
-                    onChange={e => setCredentials({password: e.target.value})}
-                />
-                <button>Login</button>
-            </form>
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="username"
+                value={credentials.username}
+                onChange={e => setCredentials({username: e.target.value})}
+            />
+            <input
+                type="text"
+                name="password"
+                value={credentials.password}
+                onChange={e => setCredentials({password: e.target.value})}
+            />
+            <button>Login</button>
+        </form>
+      </div>
       </div>
   );
 };

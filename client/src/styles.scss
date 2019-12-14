@@ -97,3 +97,11 @@ form {
     margin-top: 16px;
   }
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
